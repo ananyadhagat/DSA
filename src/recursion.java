@@ -21,4 +21,3 @@ static int n=0;
         System.out.println("result="+result);
     }
 
-}
