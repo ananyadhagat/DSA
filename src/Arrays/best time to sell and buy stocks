@@ -1,0 +1,12 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+       int n=prices.length;
+       int currDiff=prices[0];
+       int maxDiff=prices[0];
+       for(int i=1; i<n; i++){
+        currDiff=Math.min(prices[i],currDiff+prices[i]);
+        maxDiff=Math.min(maxDiff,currDiff);
+       }
+       return maxDiff; 
+    }
+}
