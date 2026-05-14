@@ -7,6 +7,9 @@ class Solution {
       for(int i=0; i<nums.length; i++){
         total+=nums[i];
       }
+      if(x==total){
+        return nums.length;
+      }
       int sum=0;
       int req= total-x;
       while(right<nums.length){
@@ -17,6 +20,7 @@ class Solution {
        left++;
        
        }
+       
        if(sum==req){
         count=Math.max(count,right-left+1);
       
