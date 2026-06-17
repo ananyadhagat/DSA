@@ -1,7 +1,7 @@
 class Solution {
     public String processStr(String s) {
-    String result="";
-    StringBuilder sb= new StringBuilder(result);
+   
+    StringBuilder sb= new StringBuilder();
     for(int i=0; i<s.length(); i++){
         if(s.charAt(i)>='a'&& s.charAt(i)<='z'){
             sb.append(s.charAt(i));
