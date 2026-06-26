@@ -1,24 +1,23 @@
 class Solution {
     public int longestOnes(int[] nums, int k) {
-        int left=0;
-        int right=0;
-        int sublength=0;
+     
+        int i=0;
+        int j=0;
+        int ans=0;
         int zeroCount=0;
-      TreeSet<Integer> set=new TreeSet<>(); 
-     for(int i=0; i<nums.length; i++){
-       if(nums[i]==0){
-        set.add(i);
-        zeroCount++;
-        if(zeroCount>k) {
-           
-            int min=set.first();
-            set.remove(min);
-             left=min+1;
-             zeroCount--;
+        while(j<nums.length){
+          if(nums[j]==0){
+            zeroCount++;
+            
+          }
+          while(zeroCount>k){
+          if(nums[i]==0)
+           zeroCount--;
+            i++;
+          }
+          ans= Math.max(ans,j-i+1);
+          j++;  
         }
-       }  
-        sublength= Math.max(sublength, i-left+1);
-    }
-    return sublength;
+return ans;
 }
 }
